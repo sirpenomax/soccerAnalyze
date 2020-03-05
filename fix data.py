@@ -2,19 +2,14 @@ import requests
 import json
 import time
 from io import StringIO
+import numpy as np
+import pandas as pd
 
 
 
 with open('Team40_10FIXTURE_BY_ID.json') as f:
-    # io = StringIO(f)
     data=json.load(f)
 
-# data3=json.dumps(data, indent=3)
-
-""" with open('test.json', "a") as f2:
-        json.dump(data3, f2) """
-
-# print(data["FixtureByID"][0]["api"]["fixtures"][0]["homeTeam"]["team_id"])
 
 statics=[]
 stLIst={} #primary list for complite statcs dict
@@ -42,4 +37,6 @@ with open('test&test2.json', "a") as ff:
         json.dump(statics, ff)
 
 
-        #second commit
+
+
+

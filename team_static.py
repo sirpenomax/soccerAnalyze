@@ -5,7 +5,7 @@ import time
 team1 = 40
 matches = 10
 fileName = "Team%d_%dFIXTURE_Statics.json" %(team1 , matches)
-fileName2 = "Team%d_%dFIXTURE_BY_ID.json" %(team1 , matches)
+fileName2 = "TEST______Team%d_%dFIXTURE_BY_ID.json" %(team1 , matches)
 
 
 
@@ -140,8 +140,39 @@ f2.close
 
 
 
+print(response3)
 
 
+
+""" # sorting data after get request
+#
+#
+#
+
+
+statics=[]
+stLIst={} #primary list for complite statcs dict
+
+
+for x in range (10):
+    print(x)
+    if data["FixtureByID"][x]["api"]["fixtures"][0]["homeTeam"]["team_id"] == 40 :
+
+        stLIst["fixtureId"  ] = data["FixtureByID"][x]["api"]["fixtures"][0]["fixture_id"]                           
+        stLIst["shotOnGoal" ] = data["FixtureByID"][x]["api"]["fixtures"][0]["statistics"]["Shots on Goal"]["home"]  
+        stLIst["shotOffGoal"] = data["FixtureByID"][x]["api"]["fixtures"][0]["statistics"]["Shots off Goal"]["home"]  
+        stLIst["totalGoal"  ] = data["FixtureByID"][x]["api"]["fixtures"][0]["statistics"]["Total Shots"]["home"]
+        statics.append(stLIst)     
+    else:
+        pass
+        stLIst["fixtureId"  ] = data["FixtureByID"][x]["api"]["fixtures"][0]["fixture_id"]                                
+        stLIst["shotOnGoal" ] = data["FixtureByID"][x]["api"]["fixtures"][0]["statistics"]["Shots on Goal"]["away"]     
+        stLIst["shotOffGoal"] = data["FixtureByID"][x]["api"]["fixtures"][0]["statistics"]["Shots off Goal"]["away"]    
+        stLIst["totalGoal"  ] = data["FixtureByID"][x]["api"]["fixtures"][0]["statistics"]["Total Shots"]["away"]       
+        statics.append(stLIst)
+
+
+print(statics) """
 
 
 
