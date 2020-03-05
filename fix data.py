@@ -40,3 +40,6 @@ print(statics)
 
 with open('test&test2.json', "a") as ff:
         json.dump(statics, ff)
+
+
+        #second commit
