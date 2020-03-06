@@ -41,7 +41,7 @@ for x in range (len(data["FixtureByID"])):
             # print(json.dumps(statics,indent=4) )
             # time.sleep(10)
     else:
-        print("false")
+        # print("false")
         stLIst["fixtureId"  ] = data["FixtureByID"][x]["api"]["fixtures"][0]["fixture_id"]
         stLIst["shotOnGoal" ] = data["FixtureByID"][x]["api"]["fixtures"][0]["statistics"]
         stLIst["shotOffGoal"] = data["FixtureByID"][x]["api"]["fixtures"][0]["statistics"] 
