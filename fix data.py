@@ -18,9 +18,9 @@ statics=[]
 
 for x in range (len(data["FixtureByID"])):
     stLIst={} #Inner dict
-    print(x)
+    # print(x)
     if data["FixtureByID"][x]["api"]["fixtures"][0]["statistics"] is not None:
-        print("true")
+        # print("true")
         if data["FixtureByID"][x]["api"]["fixtures"][0]["homeTeam"]["team_id"] is 40 :
             
             stLIst["fixtureId"  ] = int( data["FixtureByID"][x]["api"]["fixtures"][0]["fixture_id"]                           )
