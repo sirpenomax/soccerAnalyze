@@ -65,8 +65,8 @@ with open(fileName, "a") as f:
     f.write(']}')
 
 
-with open(fileName) as f2:
-    data=json.load(f2)
+with open(fileName) as f:
+    data=json.load(f)
 
 statics=[]
 
@@ -99,8 +99,18 @@ for x in range (len(data["FixtureByID"])):
         # time.sleep(10)
 
 
+Fstatics = {"static":statics}
 
 with open('finalyRightfinaly.json', "w+") as ff:
     # ff.truncate()
     ff.flush()
-    json.dump(statics,ff)
+    json.dump(Fstatics,ff)
+
+
+    #version zero
+
+
+
+dFrame = pd.DataFrame(statics)
+
+dFrame.to_excel("output.xlsx")
