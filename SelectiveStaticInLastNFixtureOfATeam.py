@@ -1,5 +1,7 @@
 import requests
+import logging
 import json
+import csv
 import time
 from collections import defaultdict
 from io import StringIO
@@ -107,8 +109,7 @@ with open('finalyRightfinaly.json', "w+") as ff:
     json.dump(Fstatics,ff)
 
 
-    #version zero
-
+    #####################################################    Version 1.0   ###########################################################
 
 
 dFrame = pd.DataFrame(statics)
