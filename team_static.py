@@ -5,7 +5,7 @@ import time
 team1 = 40
 matches = 10
 fileName = "Team%d_%dFIXTURE_Statics.json" %(team1 , matches)
-fileName2 = "TEST______Team%d_%dFIXTURE_BY_ID.json" %(team1 , matches)
+fileName2 = "Team%d_%dFIXTURE_BY_ID.json" %(team1 , matches)
 
 
 
