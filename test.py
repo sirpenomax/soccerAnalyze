@@ -8,21 +8,12 @@ import pandas as pd
 import logging
 import numpy
 import matplotlib.pyplot as plt
-
-x = numpy.random.uniform(0.0, 5.0, 250)
-
-plt.hist(x, 5)
-plt.show()
-
-
 logging.basicConfig(level=logging.DEBUG)
+
+
 team1 = 40
 matches = 40 
 fileName = "TeamID%d_%dFixtures_By_ID_Statics.json" %(team1 , matches)
-
-
-
-
 
 
 """ logging.debug('This is a debug message')
@@ -33,8 +24,8 @@ logging.critical(x) """
 
 
 
-with open(fileName) as f:
-    data=json.load(f)
+""" with open(fileName) as f:
+    data=json.load(f) """
 
 """ stat={}
 stat = data["FixtureByID"][39]["api"]["fixtures"][0]["statistics"]
@@ -69,3 +60,14 @@ dFrame.to_excel("output3.xlsx") """
 # dFrame = pd.DataFrame(statics)
 
 # dFrame.to_excel("output.xlsx")
+
+class CollectData :
+    
+    def last_Games (self, team_ID , game_count=10 ):
+        print(team_ID)
+        print(game_count)
+
+
+cl=CollectData()
+
+cl.last_Games(40)
