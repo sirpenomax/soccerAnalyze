@@ -117,15 +117,13 @@ class CollectData :
             ff.flush()
             json.dump(Fstatics,ff)
 
+        # dFrame = pd.DataFrame(statics)
+        
+        return statics
 
+    ###########################################      version 1.1        #########################################
 
-        dFrame = pd.DataFrame(statics)
-
-        dFrame.to_excel("output8000.xlsx")
-
-
-
-cd = CollectData()
+""" cd = CollectData()
 res = cd.get_last_Games(40,13)
 cd.stat_by_f_id ( res )
-cd.depart_statics()
+cd.depart_statics() """
