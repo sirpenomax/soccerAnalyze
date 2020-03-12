@@ -10,7 +10,7 @@ import pandas as pd
 
 
 
-class CollectData :
+class collectData :
 
     """ def __init__ (self) :
         self.team_ID = -1
