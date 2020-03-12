@@ -4,6 +4,8 @@ Created on Mon Sep 16 12:45:02 2019
 
 @author: babas
 """
+
+
 from twitterscraper import query_tweets
 import pandas as pd
 import csv
