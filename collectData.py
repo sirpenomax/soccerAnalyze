@@ -12,9 +12,9 @@ import pandas as pd
 
 class CollectData :
 
-    def __init__ (self) :
+    """ def __init__ (self) :
         self.team_ID = -1
-        self.game_count = -1
+        self.game_count = -1 """
 
         # logging.error(print(self.team_ID)) #log
 
@@ -24,7 +24,7 @@ class CollectData :
         self.team_ID = team_ID
         self.game_count = game_count
 
-        # logging.critical(print(self.team_ID)) #log
+        logging.critical(print(self.team_ID)) #log
        
         #request Last N fixture of a spesefic team statics
         url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/team/%d/last/%d" %(team_ID,game_count)
@@ -46,7 +46,7 @@ class CollectData :
 
         file_Name = f"TeamID{self.team_ID}_{self.game_count}Fixtures_By_ID_Statics.json" 
 
-        # logging.critical(print(file_Name)) #log
+        logging.critical(print(file_Name)) #log
 
         with open(file_Name, "w+") as f:
             f.flush()
@@ -92,5 +92,7 @@ class CollectData :
 
 
 cd = CollectData()
-
 cd.stat_by_f_id(cd.get_last_Games(40,13))
+
+
+######################################################### version  0  ############################################################
