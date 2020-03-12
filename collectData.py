@@ -44,11 +44,11 @@ class CollectData :
 
     def stat_by_f_id ( self , last_fixtures ):
 
-        file_Name = f"TeamID{self.team_ID}_{self.game_count}Fixtures_By_ID_Statics.json" 
+        self.file_Name = f"TeamID{self.team_ID}_{self.game_count}Fixtures_By_ID_Statics.json" 
 
-        logging.critical(print(file_Name)) #log
+        # logging.critical(print(self.file_Name)) #log
 
-        with open(file_Name, "w+") as f:
+        with open(self.file_Name, "w+") as f:
             f.flush()
             f.write('{"FixtureByID": [')
 
@@ -78,7 +78,7 @@ class CollectData :
             staticByFixtureID = response3.json()
 
             if  staticByFixtureID['api']['results'] != 0:
-                with open(file_Name, "a") as f:
+                with open(self.file_Name, "a") as f:
                     json.dump(staticByFixtureID, f)
                     if x!=(results-1):
                         f.write(',')
@@ -87,12 +87,45 @@ class CollectData :
                 time.sleep(30)
 
 
-        with open(file_Name, "a") as f:
+        with open(self.file_Name, "a") as f:
             f.write(']}')
 
 
-# cd = CollectData()
-# cd.stat_by_f_id(cd.get_last_Games(40,13))
+    ######################################################### version  0.2  ############################################################
 
 
-######################################################### version  0.2  ############################################################
+    def depart_statics(self):
+        
+        logging.critical(print(self.file_Name)) #log
+        
+        with open(self.file_Name) as f:
+            data=json.load(f)
+
+        statics=[]
+
+        for x in range (len(data["FixtureByID"])):
+            stLIst={} #Inner dict
+            if data["FixtureByID"][x]["api"]["fixtures"][0]["statistics"] is not None:
+                
+                stLIst["fixtureId"] = data["FixtureByID"][x]["api"]["fixtures"][0]["fixture_id"]
+                stLIst["statics"  ] = data["FixtureByID"][x]["api"]["fixtures"][0]["statistics"]
+                statics.append(stLIst)
+
+        Fstatics = {"statics":statics}
+
+        with open('finalyRightfinalyTEST.json', "w+") as ff:
+            ff.flush()
+            json.dump(Fstatics,ff)
+
+
+
+        dFrame = pd.DataFrame(statics)
+
+        dFrame.to_excel("output8000.xlsx")
+
+
+
+cd = CollectData()
+res = cd.get_last_Games(40,13)
+cd.stat_by_f_id ( res )
+cd.depart_statics()
