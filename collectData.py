@@ -91,8 +91,8 @@ class CollectData :
             f.write(']}')
 
 
-cd = CollectData()
-cd.stat_by_f_id(cd.get_last_Games(40,13))
+# cd = CollectData()
+# cd.stat_by_f_id(cd.get_last_Games(40,13))
 
 
 ######################################################### version  0.2  ############################################################
