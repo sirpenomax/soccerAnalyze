@@ -12,19 +12,13 @@ import pandas as pd
 
 class collectData :
 
-    """ def __init__ (self) :
-        self.team_ID = -1
-        self.game_count = -1 """
-
-        # logging.error(print(self.team_ID)) #log
-
 
     def get_last_Games ( self , team_ID , game_count=13 ):
 
         self.team_ID = team_ID
         self.game_count = game_count
 
-        logging.critical(print(self.team_ID)) #log
+        # logging.critical(print(self.team_ID)) #log
        
         #request Last N fixture of a spesefic team statics
         url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/team/%d/last/%d" %(team_ID,game_count)
@@ -60,8 +54,8 @@ class collectData :
 
             fixtureId = last_fixtures['api']['fixtures'][x]['fixture_id']
             
-            # print(x)
-            # print(fixtureId)
+            print(x)
+            print(fixtureId)
 
             url = "https://api-football-v1.p.rapidapi.com/v2/fixtures/id/%d" % fixtureId
 
@@ -77,7 +71,7 @@ class collectData :
             
             staticByFixtureID = response3.json()
 
-            if  staticByFixtureID['api']['results'] != 0:
+            if  response3.status_code == 200:
                 with open(self.file_Name, "a") as f:
                     json.dump(staticByFixtureID, f)
                     if x!=(results-1):
@@ -96,7 +90,7 @@ class collectData :
 
     def depart_statics(self):
         
-        logging.critical(print(self.file_Name)) #log
+        # logging.critical(print(self.file_Name)) #log
         
         with open(self.file_Name) as f:
             data=json.load(f)
@@ -122,6 +116,18 @@ class collectData :
         return statics
 
     ###########################################      version 1.1        #########################################
+
+    def depart_foals (self , statics):
+
+        foals = []
+        pass
+
+
+
+
+
+
+
 
 """ cd = CollectData()
 res = cd.get_last_Games(40,13)

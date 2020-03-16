@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 
 team1 = 40
-matches = 40 
+matches = 40
 fileName = "TeamID%d_%dFixtures_By_ID_Statics.json" %(team1 , matches)
 
 #request Last N fixture of a spesefic team statics
