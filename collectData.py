@@ -123,13 +123,3 @@ class collectData :
         pass
 
 
-
-
-
-
-
-
-""" cd = CollectData()
-res = cd.get_last_Games(40,13)
-cd.stat_by_f_id ( res )
-cd.depart_statics() """
